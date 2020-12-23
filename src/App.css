@@ -1,38 +1,223 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh; */
+  background: #232427;
+}
+.app {
+  height: 100vh;
+  width: 100%;
+}
+/* #root {
+  height: 100vh;
+  width: 100%;
+} */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+}
+.container .card .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid #1e1f23;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .card .box::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  z-index: 1;
+  opacity: 0.2;
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-position: 50% 0;
+  background-size: cover;
+}
+.container .card .box:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+}
+
+.container .card .content {
+  padding: 20px;
+  margin-top: 230px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container .card .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8em;
+  color: rgba(255, 255, 255);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container .card .content h3 {
+  font-size: 1.7em;
+  color: rgba(255, 255, 255);
+  z-index: 1;
+  align-self: flex-end;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2px 10px;
+  border: 0 10px;
+  transition: 0.5s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container .card .content p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 10px;
+  align-self: flex-start;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  transition: 0.5s;
+}
+.container .card .content div {
+  position: relative;
+  display: block;
+  padding: 8px 20px;
+  background: #e91e63;
+  margin-top: 15px;
+  border-radius: 20px;
+  font-weight: 400;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.loader {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.outer {
+  display: flex;
+  flex-direction: column;
+}
+.container-character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin: 40px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container-character .card {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+}
+.container-character .card .box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid #1e1f23;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-character .card .box img {
+  border-radius: 15px;
+  border-image-width: 100%;
+}
+.container-character .content {
+  margin-left: 30px;
+}
+.container-character .content h1 {
+  font-size: 80px;
+  color: #cc0e74;
+}
+.container-character .content h5 {
+  color: rgba(255, 255, 255, 0.7);
+}
+.quote {
+  display: flex;
+  flex-direction: column;
+}
+.quote h2 {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 5;
+  color: #cc0e74;
+  align-items: center;
+  justify-content: center;
+}
+.quote h2 span {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.2);
+}
+.quote p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  margin: 1px;
+}
+
+.search-box {
+  display: flex;
+  justify-content: space-around;
+}
+.search-box h1 {
+}
+
+.search-box input {
+  width: 25%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  padding: 0 15px;
+  border: 0px;
+  color: #e79e4f;
+  background-color: rgba(255, 255, 255, 0.1);
 }
